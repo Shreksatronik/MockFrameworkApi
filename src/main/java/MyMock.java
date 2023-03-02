@@ -4,6 +4,7 @@ import java.lang.annotation.*;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class MyMock {
@@ -48,13 +49,34 @@ public class MyMock {
 
     private static ArrayList<CallInfo> calls = new ArrayList();
     private static ArrayList<CallInfo> setReturns = new ArrayList();
+    private static List<MockArgs> args;
+
+    void setArgs(List<MockArgs> args) {
+        this.args = args;
+    }
 
     public static void setReturn(Object oldR, Object newR) {
         CallInfo call = calls.get(calls.size() - 1);
         call.setResult(newR);
         setReturns.add(call);
+        if (!args.isEmpty()) {
+            int i = 1;
+            for (MockArgs arg : args) {
+                switch (arg.getType()) {
+                    case ANY:
+                        break;
+                    case EQ:
+                        reportMatcher(new Equals(arg));
+                }
+                i++;
+            }
+
+        }
     }
 
+    private static void reportMatcher(Equals matcher) {
+        ThreadSafeMockProgress.mockingProgress().getArgumentMatcherStorage().reportMatcher(matcher);
+    }
     private static class MyMethodWrapper<T> implements MethodInterceptor{
         T orig;
         MyMethodWrapper(T orig){ this.orig = orig;}
@@ -69,6 +91,7 @@ public class MyMock {
                 ).getResult();
             return null;
         }
+
     }
 
     public static <T> T mock(T obj, Class<T> aClass) {
