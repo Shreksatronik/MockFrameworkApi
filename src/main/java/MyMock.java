@@ -66,7 +66,7 @@ public class MyMock {
             for (Args arg : args) {
                 switch (arg.getType()) {
                     case ANY:
-                        break;
+                        //somth happ
                     case EQ:
                         //something happening
                 }
@@ -74,17 +74,31 @@ public class MyMock {
 
         }
     }
+
+    public static int anyNumerical() {
+        argsList.add(new Args(ArgumentMatchers.ANY, 0));
+        return 0;
+    }
+
+    public static char anyChar() {
+        argsList.add(new Args(ArgumentMatchers.ANY, 'a'));
+        return 'a';
+    }
+
+    public static boolean anyBool() {
+        argsList.add(new Args(ArgumentMatchers.ANY, true));
+        return true;
+    }
+
     public static <T> T any() {
         argsList.add(new Args(ArgumentMatchers.ANY, null));
         return null;
     }
 
-
     public static <T> T eq(T obj) {
         argsList.add(new Args(ArgumentMatchers.EQ, obj));
         return obj;
     }
-
 
     private static class MyMethodWrapper<T> implements MethodInterceptor{
         T orig;
