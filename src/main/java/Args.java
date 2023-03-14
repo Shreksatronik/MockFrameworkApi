@@ -1,14 +1,13 @@
- class MockArgs {
-
-        private EnumArgs type;
+public class Args {
+        private ArgumentMatchers type;
         private Object val;
 
-        MockArgs(EnumArgs type, Object val) {
+        Args(ArgumentMatchers type, Object val) {
             this.type = type;
             this.val = val;
         }
 
-        EnumArgs getType() {
+        ArgumentMatchers getType() {
             return type;
         }
 

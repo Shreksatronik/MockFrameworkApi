@@ -1,6 +1,0 @@
-enum EnumArgs {
-
-        ANY, EQ
-
-    }
-

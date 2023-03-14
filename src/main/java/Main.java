@@ -1,6 +1,4 @@
 public class Main {
-
-
     public static void main(String[] args){
         Cat obj = MyMock.mock(new Cat(Cat.Trait.kind), Cat.class);
         String response = obj.PetTheCat();
