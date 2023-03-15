@@ -1,3 +1,5 @@
+package main;
+
 public class Cat {
     public enum Trait {
         kind, indifferent, evil
