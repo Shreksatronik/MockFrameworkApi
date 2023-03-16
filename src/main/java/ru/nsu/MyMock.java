@@ -71,7 +71,7 @@ public class MyMock {
         }
         }
 
-    public static <T> T mock(T obj, Class<T> aClass) {
+    public static <T> T mock(Object obj, Class<T> aClass) {
         return (T) Enhancer.create(aClass, new MyMethodWrapper<>(obj));
     }
 

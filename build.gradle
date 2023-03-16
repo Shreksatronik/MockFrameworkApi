@@ -20,6 +20,7 @@ dependencies {
 
 	// https://mvnrepository.com/artifact/org.objenesis/objenesis
 	implementation group: 'org.objenesis', name: 'objenesis', version: '3.1'
+    testImplementation 'junit:junit:4.13.1'
 }
 
 tasks.named('test') {
