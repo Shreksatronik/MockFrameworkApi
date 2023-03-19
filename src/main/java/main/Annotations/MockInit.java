@@ -1,6 +1,5 @@
 package main.Annotations;
-
-import ru.nsu.MyMock;
+import ru.nsu.MockFramework;
 
 import java.lang.reflect.Field;
 
@@ -12,8 +11,7 @@ public class MockInit {
             if (field.isAnnotationPresent(Mock.class)) {
                 try {
                     field.setAccessible(true);
-
-                    field.set(instance, MyMock.mock(instance,field.getType()));
+                    field.set(instance, MockFramework.mock(field.getType()));
 
                 } catch (IllegalAccessException e) {
                     throw new RuntimeException(e);
