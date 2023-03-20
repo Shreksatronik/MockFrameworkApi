@@ -3,8 +3,8 @@ import main.Info;
 
     public class Stubber<T> {
 
-        public void thenReturn(T retObj) {
-            Info.getLastMockInvocationHandler().setRetObj(retObj);
+        public void thenReturn(T returnObject) {
+            Info.getLastMockInvocationHandler().setReturnObject(returnObject);
         }
 
         public void invokeRealMethod() {
@@ -12,7 +12,7 @@ import main.Info;
         }
 
         public void thenThrow(Throwable throwable) {
-            Info.getLastMockInvocationHandler().setThrowable(throwable);
+            Info.getLastMockInvocationHandler().setException(throwable);
         }
     }
 

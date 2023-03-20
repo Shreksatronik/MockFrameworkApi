@@ -13,11 +13,5 @@ public class InstanceMatcher implements ArgMatcher<Object> {
             return (arg != null) && classs.isAssignableFrom(arg.getClass());
         }
 
-        @Override
-        public String toString() {
-            return "ArgumentMathcers.InstanceMatcher{" +
-                    "classs=" + classs +
-                    '}';
-        }
     }
 

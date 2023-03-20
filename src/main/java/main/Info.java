@@ -5,9 +5,9 @@ import ru.nsu.MockInvocationHandler;
 
 public class Info {
 
-        private static final ArgMatchersStorage argumentMatcherStorage;
-
+    private static final ArgMatchersStorage argumentMatcherStorage;
     private static MockInvocationHandler lastMockInvocationHandler;
+
         static {
             argumentMatcherStorage = new ArgMatchersStorage();
         }

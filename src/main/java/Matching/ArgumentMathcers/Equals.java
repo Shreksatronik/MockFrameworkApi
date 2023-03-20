@@ -23,10 +23,4 @@ public class Equals implements ArgMatcher<Object> {
             }
         }
 
-        @Override
-        public String toString() {
-            return "EqualsMatcher{" +
-                    "wanted=" + wanted +
-                    '}';
-        }
     }

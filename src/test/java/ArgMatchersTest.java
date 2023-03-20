@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import ru.nsu.MockFramework;
 
-import static Matching.AnyAndEq.equalsTo;
+import static Matching.AnyAndEq.eq;
 
 
 public class ArgMatchersTest {
@@ -17,17 +17,17 @@ public class ArgMatchersTest {
     }
 
     @Test
-    public void test_1() {
-        MockFramework.when(testClass.foo(equalsTo(255))).thenReturn("mocked");
+    public void test1() {
+        MockFramework.when(testClass.foo(eq(25))).thenReturn("mocked");
 
-        Assert.assertEquals("mocked", testClass.foo(255));
+        Assert.assertEquals("mocked", testClass.foo(25));
         Assert.assertNull(testClass.foo(11));
     }
 
 
     @Test
     public void invokeRealMethodWithMatcher() {
-        MockFramework.when(testClass.foo(equalsTo(100))).invokeRealMethod();
+        MockFramework.when(testClass.foo(eq(100))).invokeRealMethod();
         Assert.assertEquals("Foo", testClass.foo(100));
     }
 

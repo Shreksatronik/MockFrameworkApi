@@ -17,9 +17,9 @@ public class ArgMatchersStorage {
         if (matcherStack.isEmpty()) {
             return null;
         }
-        return resetStack();
+        return delStack();
     }
-    private List<ArgMatcher> resetStack() {
+    private List<ArgMatcher> delStack() {
         ArrayList<ArgMatcher> lastMatchers = new ArrayList<>(matcherStack);
         matcherStack.clear();
         return lastMatchers;

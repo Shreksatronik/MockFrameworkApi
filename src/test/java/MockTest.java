@@ -1,21 +1,23 @@
 import main.Annotations.Mock;
+import main.Annotations.MockInit;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import com.example.mf.tests.TestClass;
+import org.junit.runner.RunWith;
 import ru.nsu.MockFramework;
-import org.junit.Test;
 
 import static Matching.AnyAndEq.anyInt;
 
 public class MockTest {
-        private TestClass test;
-
+        @Mock
+        TestClass test;
 
     @Before
-        public void setup() {
-            test = MockFramework.mock(TestClass.class);
-        }
+    public void setUp() {
+        MockInit.initMocks(this);
+    }
+
 
         @Test
         public void shouldReturnNull() {

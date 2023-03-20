@@ -12,7 +12,7 @@ public class AnyAndEq {
         return 0;
     }
 
-    public static int equalsTo(int num) {
+    public static int eq(int num) {
         putMatcher(new Equals(num));
         return 0;
     }
