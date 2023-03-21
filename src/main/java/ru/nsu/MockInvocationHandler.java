@@ -41,7 +41,7 @@ public class MockInvocationHandler {
             lastArgs = args;
         }
 
-        // checks if the method was already called with the given arguments (without argument matchers)
+
         for (Invocation dataHolder : dataHolders) {
             if (dataHolder.getMethod().equals(method) && Arrays.deepEquals(dataHolder.getArgs(), args)) {
                 if (!dataHolder.isWithMatchers()) {
