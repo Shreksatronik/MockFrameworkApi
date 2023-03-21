@@ -14,7 +14,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Callable;
 
-
+/**
+ * intercepts method calls on the created object layout and performs
+ * the appropriate actions that we have configured in advance.
+ */
 public class MockInvocationHandler {
 
     private final List<Invocation> dataHolders = new ArrayList<>();
@@ -33,7 +36,7 @@ public class MockInvocationHandler {
 
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
 
-        if (!stackTraceElements[2].toString().contains(stackTraceElements[3].getClassName())) {//если не содержит имени класса
+        if (!stackTraceElements[2].toString().contains(stackTraceElements[3].getClassName())) {
             lastMethod = method;
             lastArgs = args;
         }
