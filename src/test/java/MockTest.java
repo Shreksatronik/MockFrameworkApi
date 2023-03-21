@@ -49,7 +49,6 @@ public class MockTest {
         @Test(expected = IllegalArgumentException.class)
         public void shouldThrow() {
             MockFramework.when(test.foo(333)).thenThrow(new IllegalArgumentException());
-
             test.foo(333);
         }
     }

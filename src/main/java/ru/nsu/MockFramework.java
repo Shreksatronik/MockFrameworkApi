@@ -12,6 +12,7 @@ public class MockFramework {
         return mockCore.mock(clazz);
     }
 
+
     public static <T> Stubber<T> when(T obj) {
         return mockCore.when(obj);
     }

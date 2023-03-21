@@ -104,7 +104,6 @@ public class MockInvocationHandler {
 
     public void setException(Throwable throwable) {
 
-
         dataHolders.removeIf(dh -> dh.getMethod().equals(lastMethod) && Arrays.deepEquals(dh.getArgs(), lastArgs));
 
 
@@ -145,8 +144,6 @@ public class MockInvocationHandler {
 
     }
     public void setReturnObject(Object retObj) {
-
-
         dataHolders.removeIf(dh -> dh.getMethod().equals(lastMethod) && Arrays.deepEquals(dh.getArgs(), lastArgs));
 
 

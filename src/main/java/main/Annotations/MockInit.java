@@ -3,13 +3,12 @@ import ru.nsu.MockFramework;
 import java.lang.reflect.Field;
 
 public class MockInit {
-    public static void initMocks(Object instance) {
-        Field[] fields = instance.getClass().getDeclaredFields();
-        for (Field field : fields) {
+    public static void initMocks(Object obj) {
+        for (Field field : obj.getClass().getDeclaredFields()) {
             if (field.isAnnotationPresent(Mock.class)) {
                 try {
                     field.setAccessible(true);
-                    field.set(instance, MockFramework.mock(field.getType()));
+                    field.set(obj, MockFramework.mock(field.getType()));
 
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();

@@ -8,10 +8,10 @@ import org.objenesis.Objenesis;
 import org.objenesis.ObjenesisStd;
 import org.objenesis.instantiator.ObjectInstantiator;
 
-import java.lang.reflect.Field;
 
 public class MockMaker {
         public static <T> T mock(Class<T> clazz, DelegationStrategy delegationStrategy) {
+
             Info.setLastMockInvocationHandler(new MockInvocationHandler(delegationStrategy));
 
             Class<? extends T> byteBuddy = new ByteBuddy()
@@ -26,4 +26,7 @@ public class MockMaker {
             Objenesis objenesis = new ObjenesisStd();
             ObjectInstantiator<? extends T> thingyInstantiator = objenesis.getInstantiatorOf(byteBuddy);
             return thingyInstantiator.newInstance();
-        }    }
+        }
+
+
+}
