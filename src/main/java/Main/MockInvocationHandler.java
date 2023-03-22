@@ -1,7 +1,7 @@
-package ru.nsu;
+package Main;
 
 import Matching.ArgumentMathcers.ArgMatcher;
-import main.Info;
+import Annotation.Info;
 import net.bytebuddy.implementation.bind.annotation.AllArguments;
 import net.bytebuddy.implementation.bind.annotation.Origin;
 import net.bytebuddy.implementation.bind.annotation.RuntimeType;

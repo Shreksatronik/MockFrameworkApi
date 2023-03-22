@@ -1,7 +1,7 @@
-package ru.nsu;
+package Main;
 
 import net.bytebuddy.ByteBuddy;
-import main.Info;
+import Annotation.Info;
 import net.bytebuddy.implementation.MethodDelegation;
 import net.bytebuddy.matcher.ElementMatchers;
 import org.objenesis.Objenesis;

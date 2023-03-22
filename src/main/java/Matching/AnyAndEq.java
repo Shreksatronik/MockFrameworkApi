@@ -1,5 +1,5 @@
 package Matching;
-import main.Info;
+import Annotation.Info;
 
 import Matching.ArgumentMathcers.ArgMatcher;
 import Matching.ArgumentMathcers.Equals;

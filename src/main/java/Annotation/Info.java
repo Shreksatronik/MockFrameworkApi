@@ -1,7 +1,7 @@
-package main;
+package Annotation;
 
 import Matching.ArgMatchersStorage;
-import ru.nsu.MockInvocationHandler;
+import Main.MockInvocationHandler;
 
 public class Info {
 

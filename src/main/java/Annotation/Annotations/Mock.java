@@ -1,4 +1,4 @@
-package main.Annotations;
+package Annotation.Annotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

@@ -1,11 +1,10 @@
-import main.Annotations.Mock;
-import main.Annotations.MockInit;
+import Annotation.Annotations.Mock;
+import Annotation.Annotations.MockInit;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import com.example.mf.tests.TestClass;
-import org.junit.runner.RunWith;
-import ru.nsu.MockFramework;
+import Main.MockFramework;
 
 import static Matching.AnyAndEq.anyInt;
 
@@ -20,18 +19,18 @@ public class MockTest {
 
 
         @Test
-        public void shouldReturnNull() {
+        public void ReturnNullTest() {
             Assert.assertNull(test.foo(35));
         }
 
         @Test
-        public void shouldStub() {
+        public void StubTest() {
             MockFramework.when(test.foo(111)).thenReturn("mocked");
             Assert.assertEquals("mocked", test.foo(111));
         }
 
         @Test
-        public void shouldOverrideStub() {
+        public void OverrideStubTest() {
             MockFramework.when(test.foo(anyInt())).thenReturn("anyint");
             MockFramework.when(test.foo(11)).thenReturn("override");
 
@@ -40,14 +39,14 @@ public class MockTest {
         }
 
         @Test
-        public void shouldCallRealMethod() {
+        public void CallRealMethodTest() {
             MockFramework.when(test.foo(123)).invokeRealMethod();
             Assert.assertEquals("Foo", test.foo(123));
         }
 
 
         @Test(expected = IllegalArgumentException.class)
-        public void shouldThrow() {
+        public void ThrowExceptionTest() {
             MockFramework.when(test.foo(333)).thenThrow(new IllegalArgumentException());
             test.foo(333);
         }

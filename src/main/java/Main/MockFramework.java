@@ -1,4 +1,6 @@
-package ru.nsu;
+package Main;
+
+import Main.Stubber.Stubber;
 
 public class MockFramework {
 

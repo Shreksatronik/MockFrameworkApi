@@ -1,5 +1,5 @@
-package ru.nsu;
-import main.Info;
+package Main.Stubber;
+import Annotation.Info;
 
     public class Stubber<T> {
 

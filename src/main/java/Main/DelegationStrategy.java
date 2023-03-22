@@ -1,4 +1,4 @@
-package ru.nsu;
+package Main;
 
 public enum DelegationStrategy {
 

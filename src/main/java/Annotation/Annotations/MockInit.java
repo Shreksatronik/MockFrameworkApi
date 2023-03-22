@@ -1,5 +1,5 @@
-package main.Annotations;
-import ru.nsu.MockFramework;
+package Annotation.Annotations;
+import Main.MockFramework;
 import java.lang.reflect.Field;
 
 public class MockInit {

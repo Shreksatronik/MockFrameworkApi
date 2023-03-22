@@ -1,4 +1,4 @@
-package ru.nsu;
+package Main;
 
 import Matching.ArgumentMathcers.ArgMatcher;
 
